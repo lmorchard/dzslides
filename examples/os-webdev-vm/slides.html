@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+
+<meta charset="utf-8">
+<title>Inviting Contributors to Open Source Webdev through Virtualization</title>
+
+<!-- Your Slides -->
+<!-- One section is one slide -->
+
+<section>
+    <h1>Inviting <strong>Contributors</strong> to <strong>Open Source Webdev</strong> through <strong>Virtualization</strong></h1>
+    <footer>by <a href="http://twitter.com/lmorchard">@lmorchard</a>.</footer>
+</section>
+
+<section>
+    <h2>Who am I?</h2>
+    <ul>
+        <li><strong>{web,mad,computer}</strong> scientist
+        <li><strong>{tech,scifi}</strong> writer
+        <li>home<strong>{brew,roast}</strong>er
+    </ul>
+    <img src="imgs/Heeed10.jpg" style="position: absolute; width: 225px; top: 185px; left: 560px; box-shadow: 0 0 10px black;" />
+    <h2>I'm also a <strong>Mozillian</strong></h2>
+</section>
+
+<section>
+    <h2>What do I do?</h2>
+    <ul style="font-size: 0.5em;">
+        <li>developer.mozilla.org
+        <li>addons.mozilla.org
+        <li>support.mozilla.org
+        <li>mozilla.com
+        <li>Firefox Sync (nee Weave)
+        <li>Plugin Check
+        <li>Crash Reporter
+        <LI>Build Your Own Browser
+        <li>random engagement projects
+    </ul>
+    <details><ul>
+        <li>I've spent time working on all of these projects at Mozilla
+        <li>They're all open source
+        <li>But, having worked on them, I'm not sure they're all very inviting projects
+    </ul></details>
+    <table class="images" border="0" cellspacing="0">
+        <tr>
+            <td><img src="https://developer.mozilla.org/media/img/mdn-logo-compact.png" /></td>
+            <td><img src="https://static-cdn.addons.mozilla.net/media/img/zamboni/footer-logo-med.png?b=720e500-4dfa73dc" /></td>
+            <td><img src="http://support.mozilla.com/media/img/promo.sumo.png" /></td>
+        </tr><tr>
+            <td><img src="http://www.mozilla.org/images/template/screen/logo_footer.png" /></td>
+            <td><img src="http://mozcom-cdn.mozilla.net/img/covehead/plugincheck/background.png" /></td>
+            <td><img src="https://services.mozilla.com/images/weave-logo.png" style="background: #fff;" /></td>
+        </tr><tr>
+            <td><img src="http://mozcom-cdn.mozilla.net/img/mobile/background-feature-sync.png" /></td>
+            <td><img src="https://crash-stats.mozilla.com/img/2.0/logo2.png" /></td>
+            <td><img src="http://people.mozilla.com/~chowse/drop/byob/style/img/bullet-4.png" /></td>
+        </tr>
+    </table>
+    <h2>I've been a wandering <strong>webdev</strong></h2>
+    <style type="text/css">
+        table.images {
+            position: absolute; width: 225px; top: 185px; left: 430px; box-shadow: 0 0 10px black;
+        }
+        table.images tr {
+        }
+        table.images tr td {
+            padding: 10px;
+            text-align: center;
+        }
+        table.images tr td img {
+            width: 60px;
+        }
+    </style>
+</section>
+
+<section class="chapter">
+    <h1 style="font-size: 1.25em">But, every time I wander, I find <strong>this</strong>...</h1>
+</section>
+
+<section class="chapter">
+    <img src="imgs/kuma-install.png" style="width: 100%;" />
+    <details><ul>
+        <li>And then, there's this.
+        <li>These are the installation instructions for a project I work on
+        <li>They're longer than some, shorter than others
+        <li>A wall of text between you and "hello world"
+        <li>Not everybody's favorite way to spend a Saturday afternoon
+    </ul></details>
+</section>
+
+<section class="chapter">
+    <h1><strong>Webdev</strong> is hard.</h1>
+    <details><ul>
+        <li>There's a reason why that INSTALL file is so long.
+        <li>It's because webdev is hard, and getting harder as it matures.
+    </ul></details>
+</section>
+
+<section>
+    <h2><strong>Webdev</strong></h2>
+    <dl style="font-size: 0.575em;">
+        <dt>http</dt> <dd>apache; lighttpd; nginx; ...</dd>
+        <dt>languages</dt> <dd>perl; python; php; ruby; javascript; java; erlang; ...</dd>
+        <dt>frameworks</dt> <dd>rails; django; pylons; mojo; kohana; cake; symfony; ...</dd>
+        <dt>html5</dt> <dd>localstorage; indexeddb; websockets; forms; canvas; offline; ...</dd>
+        <dt>content</dt> <dd>ux; ia; design; illustration; tech writing; creative writing; ...</dd>
+        <dt>[no]sql</dt> <dd>mysql; postgres; redis; mongo; couch; ...</dd>
+        <dt>caching</dt> <dd>memcache; squid; nginx; zeus; ...</dd>
+        <dt>queues</dt> <dd>gearman; rabbitmq; celery; amqp; ...</dd>
+        <dt>performance</dt> <dd>concat; minify; coffeescript; less; sass; ...</dd>
+        <dt>templates</dt> <dd>jinja2; twig; erb; jade; genshi; kid; dtl; ...</dd>
+        <dt>localization</dt> <dd>l10n; i18n; rtl; charsets; gettext; verbatim; ...</dd>
+        <dt>security</dt> <dd>xss; csrf; bleach; tls; csp; rfi; lfi; hijacking; spoofing; ...</dd>
+        <dt>metrics</dt> <dd>webtrends; google analytics; statsd; pentaho; ...</dd>
+        <dt>search</dt> <dd>xapian; lucene; sphinx; elasticsearch; ...</dd>
+        <dt>clustering</dt> <dd>load balancers; server roles; ...</dd>
+    </dl>
+    <details><ul>
+        <li>But was it ever actually that simple? Certainly isn't today.
+        <li>This is just a pile of buzzwords and names I threw at a slide
+        <li>It's admittedly slanted toward the server-side, because there's so much going on with the client-side too
+        <li>Some of these things are up there because we're a creative industry
+        <li>But some, particularly for scaling and security, are up there because we learned we needed them the hard way
+        <li>We're working to normalize this on Mozilla Webdev projects by picking a framework and establishing best practices
+        <li>But, even using an opinionated webdev stack with strong defaults, you're narrowing down choices, not areas of concern
+        <li>And we're far from done yet
+    </ul></details>
+</section>
+
+<section>
+    <h2>Why do people <strong>contribute</strong>?</h2>
+    <ul>
+        <li>Itches to scratch</li>
+        <li>Puzzles to solve</li>
+        <li>Things to learn</li>
+        <li>Awesomeness</li>
+        <li>No paycheck</li>
+    </ul>
+    <a href=""><img src="imgs/moz10-group-photo.jpg" 
+        style="position: absolute; width: 325px; top: 205px; left: 430px; box-shadow: 0 0 10px black;"  /></a>
+    <details><ul>
+        <li>So, why <strong>do</strong> people contribute to open source?
+        <li>If we want people to contribute to our projects, we need to get a for motivations.
+        <li>Fix something that's bothering you
+        <li>Learn something to get ahead in your career
+        <li>Just plain kick ass in the eyes of your peers
+        <li>Okay, so lack of pay isn't a motivation, per se, but's why
+            we call it a contribution and not a work-for-hire
+        <li>But, the not being paid part is why you need to be more inviting to
+            your potential contributors
+    </ul></details>
+</section>
+
+<section class="chapter">
+    <h1 style="font-size: 0.98em"><strong>INSTALL.txt</strong> is a waste of (human) time</h1>
+    <details><ul>
+        <li>Since I'm being paid, I put up with it
+        <li>But for unpaid contributors - you're wasting patience, goodwill, and motivation
+        <li>And that's only if your installation docs are fully up to date
+        <li>It's really easy to frog boil your way from addition to addition to forget how to get your project running from scratch
+        <li>The higher the barrier to entry you put in front of your project, the less cognitive surplus you're going to get as donation to your project
+    </ul></details>
+</section>
+
+<section>
+    <h2><strong>Puppet</strong>: INSTALL.txt for machines</h2>
+    <ul style="font-size: 0.85em">
+        <li>Not just for <strong>sysadmins</strong>
+        <li><strong>Sharable</strong> dev env
+        <li><strong>Disposable</strong> dev env
+        <li><strong>More complete</strong> dev env
+        <li>Fewer <strong>deployment surprises</strong>
+    </ul>
+    <img src="imgs/puppet.png" style="position: absolute; width: 225px; top: 205px; left: 475px" />
+    <h2><a href="http://puppetlabs.com">puppetlabs.com</a><br/>(<strong>Chef</strong> works, too!)</h2>
+    <details><ul>
+        <li>If you include a Puppet manifest with your project, you can share your dev env
+        <li>It becomes another project artifact checked into github
+        <li>And since it's repeatable, that means you can (and should) throw away your dev env regularly
+        <li>As long as you keep your Puppet manifests up to date, you'll rarely head-desk when your laptop dies
+        <li>Since it's not you installing the dev env, you can be extravagant in what you include
+        <li>That gets you closer to production, which gives you fewer surprises
+    </ul></details>
+</section>
+
+<section class="chapter">
+    <details><ul>
+        <li>These are excerpts from a Puppet manifest I'm building for the Mozilla Developer Network
+        <li>Each line of this is something you're <em>not</em> asking someone to do
+        <li>That includes you and anyone you hope to come pitch in and help in the future
+        <li>MDN kind of accreted around requirements, rather than get explicitly designed
+        <li>So, there are a lot of weird tricks and tweaks.
+        <li>And, your project may be simpler than this.
+        <li>But, eventually, all projects tend toward this - so the sooner you start on something like this, the better
+    </ul></details>
+<pre style="font-size: 0.40em">
+<span class="lnr">  1 </span><span class="Comment">#</span>
+<span class="lnr">  2 </span><span class="Comment"># Excerpts from puppet/manigests/mozilla_kuma.pp:</span>
+<span class="lnr">  3 </span><span class="Comment">#</span>
+...
+<span class="lnr"> 46 </span>package {
+<span class="lnr"> 47 </span>
+<span class="lnr"> 48 </span>    [ <span class="String">&quot;man&quot;</span>, <span class="String">&quot;man-pages&quot;</span>, <span class="String">&quot;vim-enhanced&quot;</span>, <span class="String">&quot;httpd-devel&quot;</span>, <span class="String">&quot;mysql-devel&quot;</span>,
+<span class="lnr"> 49 </span>        <span class="String">&quot;openssl-devel&quot;</span>, <span class="String">&quot;nfs-utils&quot;</span>, <span class="String">&quot;nfs-utils-lib&quot;</span>, <span class="String">&quot;mysql-server&quot;</span>, <span class="String">&quot;php-mysql&quot;</span>,
+<span class="lnr"> 50 </span>        <span class="String">&quot;vixie-cron&quot;</span>]:
+<span class="lnr"> 51 </span>        ensure =&gt; installed;
+<span class="lnr"> 52 </span>
+<span class="lnr"> 53 </span>    [ <span class="String">&quot;tidy&quot;</span>, <span class="String">&quot;git&quot;</span>, <span class="String">&quot;wv&quot;</span>, <span class="String">&quot;subversion-devel&quot;</span>, <span class="String">&quot;cabextract&quot;</span>, <span class="String">&quot;html2ps&quot;</span>,
+<span class="lnr"> 54 </span>        <span class="String">&quot;html2text&quot;</span>, <span class="String">&quot;memcached-devel&quot;</span>, <span class="String">&quot;libxml2&quot;</span>, <span class="String">&quot;libxml2-devel&quot;</span>, <span class="String">&quot;libxslt&quot;</span>,
+<span class="lnr"> 55 </span>        <span class="String">&quot;libxslt-devel&quot;</span>, <span class="String">&quot;libjpeg&quot;</span>, <span class="String">&quot;libjpeg-devel&quot;</span>, <span class="String">&quot;libpng&quot;</span>, <span class="String">&quot;libpng-devel&quot;</span>,
+<span class="lnr"> 56 </span>        <span class="String">&quot;python26-devel&quot;</span>, <span class="String">&quot;python26-libs&quot;</span>, <span class="String">&quot;python26-distribute&quot;</span>,
+<span class="lnr"> 57 </span>        <span class="String">&quot;python26-mod_wsgi&quot;</span>, <span class="String">&quot;python26-jinja2&quot;</span>, <span class="String">&quot;python26-imaging&quot;</span>,
+<span class="lnr"> 58 </span>        <span class="String">&quot;python26-imaging-devel&quot;</span>, <span class="String">&quot;python-lxml&quot;</span> ]:
+<span class="lnr"> 59 </span>        ensure =&gt; installed, require =&gt; Exec[<span class="String">'repo_epel'</span>];
+<span class="lnr"> 60 </span>
+<span class="lnr"> 61 </span>}
+...
+<span class="lnr">276 </span>exec {
+...
+<span class="lnr">298 </span>    <span class="String">&quot;setup_mysql_wikidb&quot;</span>:
+<span class="lnr">299 </span>        command =&gt; <span class="String">&quot;/usr/bin/mysql -u root wikidb &lt; /tmp/wikidb.sql&quot;</span>,
+<span class="lnr">300 </span>        unless =&gt; <span class="String">&quot;/usr/bin/mysql -uroot wikidb -B -e 'show tables' 2&gt;&amp;1 | grep -q 'pages'&quot;</span>,
+<span class="lnr">301 </span>        require =&gt; [
+<span class="lnr">302 </span>            File[<span class="String">&quot;/tmp/wikidb.sql&quot;</span>],
+<span class="lnr">303 </span>            Service[<span class="String">&quot;mysqld&quot;</span>],
+<span class="lnr">304 </span>            Exec[<span class="String">&quot;setup_mysql_databases_and_users&quot;</span>]
+<span class="lnr">305 </span>        ];
+...
+<span class="lnr">318 </span>    <span class="String">&quot;kuma_sql_migrate&quot;</span>:
+<span class="lnr">319 </span>        cwd =&gt; <span class="String">&quot;/vagrant&quot;</span>, command =&gt; <span class="String">&quot;/usr/bin/python2.6 ./vendor/src/schematic/schematic migrations/&quot;</span>,
+<span class="lnr">320 </span>        require =&gt; [
+<span class="lnr">321 </span>            Service[<span class="String">&quot;mysqld&quot;</span>],
+<span class="lnr">322 </span>            Package[<span class="String">&quot;python26-devel&quot;</span>, <span class="String">&quot;python26-mod_wsgi&quot;</span>, <span class="String">&quot;python26-jinja2&quot;</span>,
+<span class="lnr">323 </span>                <span class="String">&quot;python26-imaging&quot;</span>],
+<span class="lnr">324 </span>            Exec[<span class="String">&quot;mysql-python-install&quot;</span>, <span class="String">&quot;lxml-install&quot;</span>,
+<span class="lnr">325 </span>                <span class="String">&quot;setup_mysql_databases_and_users&quot;</span>,
+<span class="lnr">326 </span>                <span class="String">&quot;vendor_lib_git_submodule_update&quot;</span>]
+<span class="lnr">327 </span>        ];
+<span class="lnr">328 </span>    <span class="String">&quot;kuma_south_migrate&quot;</span>:
+<span class="lnr">329 </span>        cwd =&gt; <span class="String">&quot;/vagrant&quot;</span>, command =&gt; <span class="String">&quot;/usr/bin/python2.6 manage.py migrate&quot;</span>,
+<span class="lnr">330 </span>        require =&gt; [
+<span class="lnr">331 </span>            Exec[<span class="String">&quot;kuma_sql_migrate&quot;</span>]
+<span class="lnr">332 </span>        ];
+<span class="lnr">333 </span>
+...
+<span class="lnr">338 </span>    <span class="String">&quot;kuma_update_product_details&quot;</span>:
+<span class="lnr">339 </span>        cwd =&gt; <span class="String">&quot;/vagrant&quot;</span>, command =&gt; <span class="String">&quot;/usr/bin/python2.6 ./manage.py update_product_details&quot;</span>,
+<span class="lnr">340 </span>        creates =&gt; <span class="String">&quot;/home/vagrant/product_details_json/firefox_versions.json&quot;</span>,
+<span class="lnr">341 </span>        require =&gt; [
+<span class="lnr">342 </span>            Exec[<span class="String">&quot;kuma_south_migrate&quot;</span>],
+<span class="lnr">343 </span>            File[<span class="String">&quot;/home/vagrant/product_details_json&quot;</span>]
+<span class="lnr">344 </span>        ];
+<span class="lnr">345 </span>    <span class="String">&quot;kuma_update_feeds&quot;</span>:
+<span class="lnr">346 </span>        cwd =&gt; <span class="String">&quot;/vagrant&quot;</span>, command =&gt; <span class="String">&quot;/usr/bin/python2.6 ./manage.py update_feeds&quot;</span>,
+<span class="lnr">347 </span>        onlyif =&gt; <span class="String">&quot;/usr/bin/mysql -B -uroot kuma -e'select count(*) from feeder_entry' | grep '0'&quot;</span>,
+<span class="lnr">348 </span>        require =&gt; [
+<span class="lnr">349 </span>            Exec[<span class="String">&quot;kuma_south_migrate&quot;</span>]
+<span class="lnr">350 </span>        ];
+
+</pre>
+</section>
+
+<section>
+    <h2><strong>Vagrant</strong>: Living in boxes</h2>
+    <ul>
+        <li><strong>Makefiles</strong> for Virtual Machines
+        <li>Bootstrap to <strong>Puppet</strong> or <strong>Chef</strong>
+        <li>Edit project files <strong>on the host</strong>
+        <li>Changes apply <strong>in the box</strong>
+        <li><strong>Package</strong> and <strong>share</strong> VMs
+    </ul>
+    <img src="imgs/vagrant_chilling.png" style="background: #fff; position: absolute; width: 225px; top: 215px; left: 555px" />
+    <h2><a href="http://vagrantup.com">vagrantup.com</a></h2>
+    <details><ul>
+    </ul></details>
+</section>
+
+<section class="chapter">
+    <details><ul>
+    </ul></details>
+<pre style="font-size: 0.46em">
+<span class="lnr"> 1 </span><span class="Type">Vagrant</span>::<span class="Type">Config</span>.run <span class="Statement">do</span> |<span class="Identifier">config</span>|
+<span class="lnr"> 2 </span>
+<span class="lnr"> 3 </span>    <span class="Comment"># To rebuild from mostly scratch, use this CentOS 5.6 (32 bit) image:</span>
+<span class="lnr"> 4 </span>    config.vm.box = <span class="Special">&quot;</span><span class="String">centos-56-32</span><span class="Special">&quot;</span>
+<span class="lnr"> 5 </span>    config.vm.box_url = <span class="Special">&quot;</span><span class="String"><a href="http://people.mozilla.com/~lorchard/centos-56-32.box">http://people.mozilla.com/~lorchard/centos-56-32.box</a></span><span class="Special">&quot;</span>
+...
+<span class="lnr">13 </span>    <span class="Comment"># Once you've gotten a successful initial from-scratch build, export the</span>
+<span class="lnr">14 </span>    <span class="Comment"># box for faster destroy/up next time.</span>
+<span class="lnr">15 </span>    <span class="Comment">#  $ vagrant package</span>
+<span class="lnr">16 </span>    <span class="Comment">#  $ vagrant box add kuma kuma.box</span>
+<span class="lnr">17 </span>    config.package.name = <span class="Special">&quot;</span><span class="String">kuma.box</span><span class="Special">&quot;</span>
+<span class="lnr">18 </span>
+<span class="lnr">19 </span>    <span class="Comment"># Uncomment this line to use your packaged box</span>
+<span class="lnr">20 </span>    <span class="Comment"># config.vm.box = &quot;kuma&quot;</span>
+<span class="lnr">21 </span>
+<span class="lnr">22 </span>    <span class="Comment"># On OS X and Linux you can use an NFS mount; virtualbox shared folders are slow.</span>
+<span class="lnr">23 </span>    <span class="Comment"># see also: <a href="http://vagrantup.com/docs/nfs.html">http://vagrantup.com/docs/nfs.html</a></span>
+<span class="lnr">24 </span>    config.vm.share_folder(<span class="Special">&quot;</span><span class="String">v-root</span><span class="Special">&quot;</span>, <span class="Special">&quot;</span><span class="String">/vagrant</span><span class="Special">&quot;</span>, <span class="Special">&quot;</span><span class="String">.</span><span class="Special">&quot;</span>, <span class="Constant">:nfs</span> =&gt; <span class="Boolean">true</span>)
+...
+<span class="lnr">30 </span>    <span class="Comment"># This thing can be a little hungry for memory</span>
+<span class="lnr">31 </span>    config.vm.customize <span class="Statement">do</span> |<span class="Identifier">vm</span>|
+<span class="lnr">32 </span>        vm.memory_size = <span class="Number">768</span>
+<span class="lnr">33 </span>    <span class="Statement">end</span>
+<span class="lnr">34 </span>
+<span class="lnr">35 </span>    <span class="Comment"># Increase vagrant's patience during hang-y CentOS bootup</span>
+<span class="lnr">36 </span>    <span class="Comment"># see: <a href="https://github.com/jedi4ever/veewee/issues/14">https://github.com/jedi4ever/veewee/issues/14</a></span>
+<span class="lnr">37 </span>    config.ssh.max_tries = <span class="Number">50</span>
+<span class="lnr">38 </span>    config.ssh.timeout   = <span class="Number">300</span>
+<span class="lnr">39 </span>
+<span class="lnr">40 </span>    <span class="Comment"># uncomment to enable VM GUI console, mainly for troubleshooting</span>
+<span class="lnr">41 </span>    <span class="Comment">#config.vm.boot_mode = :gui</span>
+<span class="lnr">42 </span>
+<span class="lnr">43 </span>    <span class="Comment"># Add to /etc/hosts: 192.168.10.50 dev-kuma.developer.mozilla.org</span>
+<span class="lnr">44 </span>    config.vm.network(<span class="Special">&quot;</span><span class="String">192.168.10.50</span><span class="Special">&quot;</span>)
+<span class="lnr">45 </span>
+<span class="lnr">46 </span>    config.vm.provision <span class="Constant">:puppet</span> <span class="Statement">do</span> |<span class="Identifier">puppet</span>|
+<span class="lnr">47 </span>        puppet.manifests_path = <span class="Special">&quot;</span><span class="String">puppet/manifests</span><span class="Special">&quot;</span>
+<span class="lnr">48 </span>        puppet.manifest_file = <span class="Special">&quot;</span><span class="String">mozilla_kuma.pp</span><span class="Special">&quot;</span>
+<span class="lnr">49 </span>    <span class="Statement">end</span>
+<span class="lnr">50 </span>
+<span class="lnr">51 </span><span class="Statement">end</span>
+</pre>
+</section>
+
+<section class="chapter">
+    <h1 style="font-size: 0.95em">So someday, <strong>on my project</strong>, you might find <strong>this</strong>...</h1>
+</section>
+
+<section class="chapter">
+<pre style="display: block; width: 500px; margin: 120px auto; white-space: pre-line">
+<span class="Comment"># Install VirtualBox 4 from http://www.virtualbox.org/</span>
+
+<span class="Comment"># Install vagrant, see vagrantup.com</span>
+gem install vagrant
+
+<span class="Comment"># Clone the repo from GitHub</span>
+git clone git://github.com/mozilla/kuma.git
+
+<span class="Comment"># Fire up the VM and install everything,
+# go take a bike ride (approx. 15 min)</span>
+vagrant up
+
+<span class="Comment"># Add dev-kuma.developer.mozilla.org to /etc/hosts</span>
+echo '192.168.10.50 dev-kuma.developer.mozilla.org' >> /etc/hosts
+</pre>
+    <details><ul>
+        <li>
+    </ul></details>
+</section>
+
+<section>
+    <h2>What about <strong>The Cloud</strong>?</h2>
+    <ul>
+        <li><strong>Hardware</strong> is <strong>software</strong></li>
+        <li><strong>Configuration</strong> is <strong>code</strong></li>
+        <li><strong>Rent</strong> is <strong>cheap</strong></li>
+    </ul>
+    <div style="background: #fff; position: absolute; padding: 0.5em; width: 200px; top: 185px; left: 455px; box-shadow: 0 0 10px black;">
+        <img src="imgs/rackspace-cloud.png" style="width: 100%;" />
+        <img src="imgs/250px-AmazonWebservices_Logo.svg.png" style="width: 100%;" />
+    </div>
+    <details><ul>
+        <li>Once upon a time, we talked about financing computers like cars
+        <li>You can pull them out of thin air for pennies per hour
+        <li>You could use a netbook for webdev
+    </ul></details>
+</section>
+
+<section class="chapter">
+<pre style="font-size: 0.475em">
+<span class="lnr"> 1 </span><span class="Comment">#!/bin/bash</span>
+<span class="lnr"> 2 </span><span class="Comment">#</span>
+<span class="lnr"> 3 </span><span class="Comment"># Quick bootstrap script for a Centos 5.5 linux host</span>
+<span class="lnr"> 4 </span><span class="Comment">#</span>
+<span class="lnr"> 5 </span><span class="Comment"># Example Rackspace Cloud usage: </span>
+<span class="lnr"> 6 </span><span class="Comment">#</span>
+<span class="lnr"> 7 </span><span class="Comment">#   * Grab a copy of [rscurl](<a href="https://github.com/jsquared/rscurl">https://github.com/jsquared/rscurl</a>).</span>
+<span class="lnr"> 8 </span><span class="Comment">#       * You can use web-based management, but the command line can be fun.</span>
+<span class="lnr"> 9 </span><span class="Comment">#</span>
+<span class="lnr">10 </span><span class="Comment">#   * Spin up a server:</span>
+<span class="lnr">11 </span><span class="Comment">#       rscurl.sh -a $RACKSPACE_API_KEY -u $RACKSPACE_USERNAME \</span>
+<span class="lnr">12 </span><span class="Comment">#           -c create-server -f 2 -i 51 -n 'kuma-dev-1'</span>
+<span class="lnr">13 </span><span class="Comment">#</span>
+<span class="lnr">14 </span><span class="Comment">#   * Note the server IP and root password reported by Rackspace.</span>
+<span class="lnr">15 </span><span class="Comment">#</span>
+<span class="lnr">16 </span><span class="Comment">#   * Wait until server is active. Check like so:</span>
+<span class="lnr">17 </span><span class="Comment">#       rscurl.sh -a $RACKSPACE_API_KEY -u $RACKSPACE_USERNAME -c list-servers</span>
+<span class="lnr">18 </span><span class="Comment">#</span>
+<span class="lnr">19 </span><span class="Comment">#   * Once the server is active, kick off the bootstrap:</span>
+<span class="lnr">20 </span><span class="Comment">#       ssh root@$HOST 'wget --no-check-certificate -O- \</span>
+<span class="lnr">21 </span><span class="Comment">#           <a href="https://github.com/mozilla/kuma/raw/HEAD/scripts/centos55-bootstrap.sh">https://github.com/mozilla/kuma/raw/HEAD/scripts/centos55-bootstrap.sh</a> | bash'</span>
+<span class="lnr">22 </span><span class="Comment">#</span>
+<span class="lnr">23 </span>
+<span class="lnr">24 </span><span class="Identifier">GIT_REPO_URL</span>=<span class="Operator">&quot;</span><span class="String">git://github.com/mozilla/kuma.git</span><span class="Operator">&quot;</span>
+<span class="lnr">25 </span>
+<span class="lnr">26 </span><span class="Comment"># Need the EPEL repo right away, for git and puppet</span>
+<span class="lnr">27 </span><span class="Statement">rpm</span> <span class="Special">-Uvh</span> <a href="http://download.fedora.redhat.com/pub/epel/">http://download.fedora.redhat.com/pub/epel/5x86_64/epel-release-5-4.noarch.rpm</a>
+<span class="lnr">28 </span>yum <span class="Statement">install</span> <span class="Special">-y</span> git puppet
+<span class="lnr">29 </span>
+<span class="lnr">30 </span><span class="Comment"># Clone the project from github</span>
+<span class="lnr">31 </span>git clone <span class="PreProc">$GIT_REPO_URL</span> /vagrant
+<span class="lnr">32 </span><span class="Statement">cd</span> /vagrant
+<span class="lnr">33 </span>
+<span class="lnr">34 </span><span class="Comment"># I like to git push from my laptop to the dev VM, and this makes it easier</span>
+<span class="lnr">35 </span>git config <span class="Special">--local</span> receive.denyCurrentBranch ignore
+<span class="lnr">36 </span><span class="Statement">echo</span><span class="String"> </span><span class="Operator">'</span><span class="String">unset GIT_DIR &amp;&amp; cd .. &amp;&amp; git reset --hard</span><span class="Operator">'</span><span class="String"> </span><span class="Operator">&gt;</span> .git/hooks/post-receive
+<span class="lnr">37 </span><span class="Statement">chmod</span> <span class="Special">+x</span> .git/hooks/post-receive
+<span class="lnr">38 </span>
+<span class="lnr">39 </span><span class="Comment"># Let puppet take it from here...</span>
+<span class="lnr">40 </span>puppet /vagrant/puppet/manifests/*.pp
+</pre>
+</section>
+
+<section>
+    <h2>What about <strong>the data</strong>?</h2>
+    <ul>
+        <li><strong>Sites</strong> are more than <strong>code</strong></li>
+        <li>Sanitized <strong>production data</strong></li>
+        <li>Contrived <strong>test samples</strong></li>
+    </ul>
+    <div>
+    </div>
+    <details><ul>
+        <li>If your site is a wiki containing user-generated documentation, then the wiki itself is barely half the story
+        <li>But, although the content may be liberally licensed, personally identifiable information is generally not
+        <li>Depends on your goals and species of contributors
+        <li>Code-contributors may be fine with test samples, while content-contributors should use the productions site
+        <li>Unless code-contributors need to do something like build a scalable search engine or analysis tool
+    </ul></details>
+</section>
+
+<section>
+    <h2>Examples in the wild</h2>
+    <ul>
+       
+    </ul>
+</section>
+
+<section>
+    <h2>The <strong>FUTURE</strong></h2>
+    <ul>
+       
+    </ul>
+</section>
+
+<!--
+
+* blow away your VM once a week or month
+* your dev machine setup is no longer a precious asset
+
+* nfs mounts
+
+* mccloud for vagrant in the cloud - https://github.com/jedi4ever/mccloud
+* cover "wanton", which wraps vagrant in a jar for self-executing boxes
+
+* some examples
+    * palm webos
+    * yahoo connected tvs
+    * mozilla socorro
+
+-->
+
+<!-- Style -->
+
+<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet'>
+
+<style>
+    /* Output from Vim: :TOhtml */
+    pre { margin: 20px 0 0 40px;font-size: 15px; font-weight: bold;}
+    .Constant { color: #af5fff}
+    .StorageClass { color: #ff8700}
+    .Exception { color: #87ff00}
+    .Identifier { color: #ff8700}
+    .Title { color: #d75f00}
+    .String { color: #afaf87}
+    .Type { color: #5fd7ff}
+    .Statement { color: #d7005f}
+    .Function { color: #87ff00}
+    .Comment { color: #a66; }
+</style>
+
+<style>
+  html { background-color: black; }
+  a { color: #aca; } a:hover {text-decoration: underline;}
+  footer { position: absolute; bottom: 50px; right: 50px; }
+  strong {color: #aca }
+  body {
+      font-family: 'Oswald', arial, serif;
+      background-color: white;
+      color: white;
+      font-size: 2em;
+      background: #1C1C1C;
+      background-image: -moz-radial-gradient(center 45deg, #333 0%, #1C1C1C 50%);
+      background-image: -moz-radial-gradient(center 45deg, #333 0%, #1C1C1C 50%);
+  }
+
+
+  /* Transition effect */
+  section {
+      -moz-transition: left 400ms linear 0s;
+      -webkit-transition: left 400ms linear 0s;
+      -o-transition: left 400ms linear 0s;
+      -ms-transition: left 400ms linear 0s;
+      transition: left 400ms linear 0s;
+  }
+  section { left: -150%; }
+  section[aria-selected] { left: 0; }
+  section[aria-selected] ~ section { left: +150% }
+
+  .chapter { background-color: black;}
+  .chapter h1 {line-height: 600px; vertical-align: middle; margin: 0; text-align: center; display: block}
+
+  h1 {
+      margin: 50px 100px 0 100px;
+      font-size: 50px;
+      text-shadow: 0px -1px 0px #000;
+      text-align: left;
+  }
+  h2 {
+      color: #686;
+      margin: 70px 0 0 0;
+      font-size: 40px;
+      text-align: center;
+  }
+  ul {
+      margin-top: 70px;
+      font-size: 35px;
+      text-align: right;
+      border-right: 4px solid white;
+      padding-right: 40px;
+      min-width: 310px;
+      margin-left: 50px;
+      display: inline-block;
+  }
+    dl { 
+        margin: 1em 0;
+    }
+    dl dt { 
+        float: left;
+        width: 250px;
+        text-align: right;
+        border-right: 4px solid white;
+        padding-right: 15px;
+        margin-right: 15px;
+    }
+    dl dd { 
+        color: #a9a;
+    }
+  q, p {
+      margin: 50px auto 0 auto;
+      width: 500px;
+  }
+  q:after {content: ""}
+  q:before {content: ""}
+  q {
+      display: block;
+      margin-top: 140px;
+  }
+  video {
+      position: absolute;
+      top: 210px;
+      width: 260px;
+      left: 445px;
+      box-shadow: 0 0 10px black;
+  }
+  #arrow {
+      position: absolute;
+      top: 165px;
+      left: 460px;
+      font-size: 100px;
+      color: white;
+
+  }
+  li {list-style-type: none}
+
+</style>
+
+
+<!-- {{{{ *****************  DZSlides CORE 2.0b1 *************************** -->
+<!-- *********************************************************************** -->
+<!-- *********************************************************************** -->
+<!-- *********************************************************************** -->
+<!-- *********************************************************************** -->
+
+<!-- This block of code is not supposed to be edited, but if you want to change the behavior of the slides, feel free to hack it ;) -->
+
+<!-- Default Style -->
+<style>
+  * { margin: 0; padding: 0; }
+  details {display: none;}
+  body {
+    width: 800px; height: 600px;
+    margin-left: -400px; margin-top: -300px;
+    position: absolute; top: 50%; left: 50%;
+    overflow: hidden;
+  }
+  section {
+    position: absolute;
+    pointer-events: none;
+    width: 100%; height: 100%;
+  }
+  section[aria-selected] { pointer-events: auto;}
+  body {display: none}
+  body.loaded {display: block}
+</style>
+
+<script>
+  var friendWindows = [];
+  var idx = 1;
+  var slides;
+
+  /* main() */
+
+  window.onload = function() {
+    slides = document.querySelectorAll("body > section");
+    onhashchange();
+    setSlide();
+    document.body.className = "loaded";
+    onresize();
+  }
+
+  /* Handle keys */
+
+  window.onkeydown = function(e) {
+    // Don't intercept keyboard shortcuts
+    if (e.altKey || e.ctrlKey || e.metaKey || e.shiftKey) {
+      return;
+    }
+    if ( e.keyCode == 37 // left arrow
+      || e.keyCode == 33 // page up
+    ) {
+      e.preventDefault();
+      back();
+    }
+    if ( e.keyCode == 39 // right arrow
+      || e.keyCode == 34 // page down
+    ) {
+      e.preventDefault();
+      forward();
+    }
+
+    if ( e.keyCode == 32) { // space
+        e.preventDefault();
+        toggleContent();
+    }
+  }
+
+  /* Adapt the size of the slides to the window */
+
+  window.onresize = function() {
+    var sx = document.body.clientWidth / window.innerWidth;
+    var sy = document.body.clientHeight / window.innerHeight;
+    var transform = "scale(" + (1/Math.max(sx, sy)) + ")";
+    document.body.style.MozTransform = transform;
+    document.body.style.WebkitTransform = transform;
+    document.body.style.OTransform = transform;
+    document.body.style.msTransform = transform;
+    document.body.style.transform = transform;
+  }
+  function getDetails(idx) {
+    var s = document.querySelector("section:nth-of-type("+ idx +")");
+    var d = s.querySelector("details");
+    return d?d.innerHTML:"";
+  }
+  window.onmessage = function(e) {
+    msg = e.data;
+    win = e.source;
+    if (msg === "register") {
+      friendWindows.push(win);
+      win.postMessage(JSON.stringify({method: "registered", title: document.title, count: slides.length}), document.location);
+      win.postMessage(JSON.stringify({method: "newslide", details: getDetails(idx), idx: idx}), document.location);
+      return;
+    }
+    if (msg === "back") back();
+    if (msg === "forward") forward();
+    if (msg === "toggleContent") toggleContent();
+    // setSlide(42)
+    var r = /setSlide\((\d+)\)/.exec(msg);
+    if (r) {
+        idx = r[1];
+        setSlide();
+    }
+  }
+
+  /* If a Video is present in this new slide, play it.
+     If a Video is present in the previous slide, stop it. */
+
+  function toggleContent() {
+    var s = document.querySelector("section[aria-selected]");
+    if (s) {
+        var video = s.querySelector("video");
+        if (video) {
+            if (video.ended || video.paused) {
+                video.play();
+            } else {
+                video.pause();
+            }
+        }
+    }
+  }
+
+  /* If the user change the slide number in the URL bar, jump
+     to this slide. */
+
+  window.onhashchange = function(e) {
+    var newidx = ~~window.location.hash.split("#")[1];
+    if (!newidx) newidx = 1;
+    if (newidx == idx) return;
+    idx = newidx;
+    setSlide();
+  }
+
+  /* Slide controls */
+
+  function back() {
+    if (idx == 1) return;
+    idx--;
+    setSlide();
+  }
+  function forward() {
+    if (idx >= slides.length) return;
+    idx++;
+    setSlide();
+  }
+  function setSlide() {
+    var old = document.querySelector("section[aria-selected]");
+    var next = document.querySelector("section:nth-of-type("+ idx +")");
+    if (old) {
+      old.removeAttribute("aria-selected");
+      var video = old.querySelector("video");
+      if (video) { video.pause(); }
+    }
+    if (next) {
+      next.setAttribute("aria-selected", "true");
+      var video = next.querySelector("video");
+      if (video) { video.play(); }
+    } else {
+      console.warn("No such slide: " + idx);
+      idx = 0;
+      for (var i = 0; i < slides.length; i++) {
+          if (slides[i].hasAttribute("aria-selected")) {
+              idx = i + 1;
+          }
+      }
+    }
+    window.location.hash = idx;
+    for (var i = 0; i < friendWindows.length; i++) {
+        friendWindows[i].postMessage(JSON.stringify({method: "newslide", details: getDetails(idx), idx: idx}), document.location);
+    }
+  }
+</script>
+<!-- vim: set fdm=marker: }}} -->
