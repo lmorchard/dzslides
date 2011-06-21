@@ -42,17 +42,17 @@
     </ul></details>
     <table class="images" border="0" cellspacing="0">
         <tr>
-            <td><img src="https://developer.mozilla.org/media/img/mdn-logo-compact.png" /></td>
-            <td><img src="https://static-cdn.addons.mozilla.net/media/img/zamboni/footer-logo-med.png?b=720e500-4dfa73dc" /></td>
-            <td><img src="http://support.mozilla.com/media/img/promo.sumo.png" /></td>
+            <td><img src="imgs/mdn-logo-compact.png" /></td>
+            <td><img src="imgs/amo.png" /></td>
+            <td><img src="imgs/promo.sumo.png" /></td>
         </tr><tr>
-            <td><img src="http://www.mozilla.org/images/template/screen/logo_footer.png" /></td>
-            <td><img src="http://mozcom-cdn.mozilla.net/img/covehead/plugincheck/background.png" /></td>
-            <td><img src="https://services.mozilla.com/images/weave-logo.png" style="background: #fff;" /></td>
+            <td><img src="imgs/mozilla_dino.png" /></td>
+            <td><img src="imgs/plugincheck.png" /></td>
+            <td><img src="imgs/weave-logo.png" style="background: #fff;" /></td>
         </tr><tr>
-            <td><img src="http://mozcom-cdn.mozilla.net/img/mobile/background-feature-sync.png" /></td>
-            <td><img src="https://crash-stats.mozilla.com/img/2.0/logo2.png" /></td>
-            <td><img src="http://people.mozilla.com/~chowse/drop/byob/style/img/bullet-4.png" /></td>
+            <td><img src="imgs/background-feature-sync.png" /></td>
+            <td><img src="imgs/crashreporter.png" /></td>
+            <td><img src="imgs/byob-bullet.png" /></td>
         </tr>
     </table>
     <h2>I've been a wandering <strong>webdev</strong></h2>
@@ -102,11 +102,11 @@
         <dt>languages</dt> <dd>perl; python; php; ruby; javascript; java; erlang; ...</dd>
         <dt>frameworks</dt> <dd>rails; django; pylons; mojo; kohana; cake; symfony; ...</dd>
         <dt>html5</dt> <dd>localstorage; indexeddb; websockets; forms; canvas; offline; ...</dd>
-        <dt>content</dt> <dd>ux; ia; design; illustration; tech writing; creative writing; ...</dd>
+        <dt>content</dt> <dd>css; ux; ia; design; illustration; tech writing; creative writing; ...</dd>
         <dt>[no]sql</dt> <dd>mysql; postgres; redis; mongo; couch; ...</dd>
         <dt>caching</dt> <dd>memcache; squid; nginx; zeus; ...</dd>
         <dt>queues</dt> <dd>gearman; rabbitmq; celery; amqp; ...</dd>
-        <dt>performance</dt> <dd>concat; minify; coffeescript; less; sass; ...</dd>
+        <dt>performance</dt> <dd>concat; minify; coffeescript; less; sass; graphite; statsd; ...</dd>
         <dt>templates</dt> <dd>jinja2; twig; erb; jade; genshi; kid; dtl; ...</dd>
         <dt>localization</dt> <dd>l10n; i18n; rtl; charsets; gettext; verbatim; ...</dd>
         <dt>security</dt> <dd>xss; csrf; bleach; tls; csp; rfi; lfi; hijacking; spoofing; ...</dd>
@@ -115,9 +115,8 @@
         <dt>clustering</dt> <dd>load balancers; server roles; ...</dd>
     </dl>
     <details><ul>
-        <li>But was it ever actually that simple? Certainly isn't today.
         <li>This is just a pile of buzzwords and names I threw at a slide
-        <li>It's admittedly slanted toward the server-side, because there's so much going on with the client-side too
+        <li>It's admittedly slanted toward the server-side, but there's so much going on with the client-side too
         <li>Some of these things are up there because we're a creative industry
         <li>But some, particularly for scaling and security, are up there because we learned we needed them the hard way
         <li>We're working to normalize this on Mozilla Webdev projects by picking a framework and establishing best practices
@@ -153,11 +152,103 @@
 <section class="chapter">
     <h1 style="font-size: 0.98em"><strong>INSTALL.txt</strong> is a waste of (human) time</h1>
     <details><ul>
+        <li>So, this is the problem
         <li>Since I'm being paid, I put up with it
         <li>But for unpaid contributors - you're wasting patience, goodwill, and motivation
         <li>And that's only if your installation docs are fully up to date
         <li>It's really easy to frog boil your way from addition to addition to forget how to get your project running from scratch
-        <li>The higher the barrier to entry you put in front of your project, the less cognitive surplus you're going to get as donation to your project
+        <li>Experts in just a few of these buzzwords that you don't know would be wonderful
+    </ul></details>
+</section>
+
+<style test="text/css">
+    dl.dim dd { color: #333; }
+    dl.dim dd em { color: #a9a; font-style: normal; }
+</style>
+
+<section>
+    <h2><strong>Webdev</strong> (server side)</h2>
+    <dl style="font-size: 0.575em;" class="dim">
+        <dt>http</dt> <dd><em>apache;</em> lighttpd; nginx; ...</dd>
+        <dt>languages</dt> <dd>perl;<em> python;</em> php; ruby; javascript; java; erlang; ...</dd>
+        <dt>frameworks</dt> <dd>rails;<em> django;</em> pylons; mojo; kohana; cake; symfony; ...</dd>
+        <dt>html5</dt> <dd>localstorage; indexeddb; websockets; forms; canvas; offline; ...</dd>
+        <dt>content</dt> <dd>css; ux; ia; design; illustration; tech writing; creative writing; ...</dd>
+        <dt>[no]sql</dt> <dd><em>mysql; </em>postgres; redis; mongo; couch; ...</dd>
+        <dt>caching</dt> <dd><em>memcache; </em>squid; nginx; zeus; ...</dd>
+        <dt>queues</dt> <dd>gearman; rabbitmq;<em> celery;</em> amqp; ...</dd>
+        <dt>performance</dt> <dd>concat; minify; coffeescript; less; sass; graphite; statsd; ...</dd>
+        <dt>templates</dt> <dd>jinja2; twig; erb; jade; genshi; kid; dtl; ...</dd>
+        <dt>localization</dt> <dd>l10n; i18n; rtl; charsets; gettext; verbatim; ...</dd>
+        <dt>security</dt> <dd>xss; csrf; bleach; tls; csp; rfi; lfi; hijacking; spoofing; ...</dd>
+        <dt>metrics</dt> <dd>webtrends; google analytics; statsd; pentaho; ...</dd>
+        <dt>search</dt> <dd>xapian; lucene; sphinx;<em> elasticsearch; </em>...</span></dd>
+        <dt>clustering</dt> <dd>load balancers; server roles; ...</dd>
+    </dl>
+    <details><ul>
+        <li>Let's say your INSTALL.txt mainly covers these areas
+        <li>So, it would really help if a new contributor knew a bit about these things, just in case she or he runs into problems
+    </ul></details>
+</section>
+
+<section>
+    <h2><strong>Webdev</strong> (client side)</h2>
+    <dl style="font-size: 0.575em;" class="dim">
+        <dt>http</dt> <dd>apache; lighttpd; nginx; ...</dd>
+        <dt>languages</dt> <dd>perl; python; php; ruby; <em>javascript;</em> java; erlang; ...</dd>
+        <dt>frameworks</dt> <dd>rails; django; pylons; mojo; kohana; cake; symfony; ...</dd>
+        <dt>html5</dt> <dd><em>localstorage; indexeddb; websockets; forms; canvas; offline; ...</em></dd>
+        <dt>content</dt> <dd><em>css; ux; ia; design; illustration;</em> tech writing; creative writing; ...</dd>
+        <dt>[no]sql</dt> <dd>mysql; postgres; redis; mongo; couch; ...</dd>
+        <dt>caching</dt> <dd>memcache; squid; nginx; zeus; ...</dd>
+        <dt>queues</dt> <dd>gearman; rabbitmq; celery; amqp; ...</dd>
+        <dt>performance</dt> <dd>concat; minify; coffeescript; <em>less; sass;</em> graphite; statsd; ...</dd>
+        <dt>templates</dt> <dd>jinja2; twig; erb; jade; genshi; kid; dtl; ...</dd>
+        <dt>localization</dt> <dd>l10n; i18n; rtl; charsets; gettext; verbatim; ...</dd>
+        <dt>security</dt> <dd>xss; csrf; bleach; tls; csp; rfi; lfi; hijacking; spoofing; ...</dd>
+        <dt>metrics</dt> <dd>webtrends; google analytics; statsd; pentaho; ...</dd>
+        <dt>search</dt> <dd>xapian; lucene; sphinx; elasticsearch; ...</dd>
+        <dt>clustering</dt> <dd>load balancers; server roles; ...</dd>
+    </dl>
+    <details><ul>
+        <li>But, let's say we've got someone itching to contribute who's an absolute master at user interface
+        <li>Should we really expect this rockstar to learn the rest of the stack too, just to do us a favor?
+    </ul></details>
+</section>
+
+<section>
+    <h2><strong>Webdev</strong> (localization)</h2>
+    <dl style="font-size: 0.575em;" class="dim">
+        <dt>http</dt> <dd>apache; lighttpd; nginx; ...</dd>
+        <dt>languages</dt> <dd>perl; python; php; ruby; javascript; java; erlang; ...</dd>
+        <dt>frameworks</dt> <dd>rails; django; pylons; mojo; kohana; cake; symfony; ...</dd>
+        <dt>html5</dt> <dd>localstorage; indexeddb; websockets; forms; canvas; offline; ...</dd>
+        <dt>content</dt> <dd>ux; ia; design; illustration; tech writing; creative writing; ...</dd>
+        <dt>[no]sql</dt> <dd>mysql; postgres; redis; mongo; couch; ...</dd>
+        <dt>caching</dt> <dd>memcache; squid; nginx; zeus; ...</dd>
+        <dt>queues</dt> <dd>gearman; rabbitmq; celery; amqp; ...</dd>
+        <dt>performance</dt> <dd>concat; minify; coffeescript; less; sass; graphite; statsd; ...</dd>
+        <dt>templates</dt> <dd>jinja2; twig; erb; jade; genshi; kid; dtl; ...</dd>
+        <dt>localization</dt> <dd><em>l10n; i18n; rtl; charsets; gettext; verbatim; ...</em></dd>
+        <dt>security</dt> <dd>xss; csrf; bleach; tls; csp; rfi; lfi; hijacking; spoofing; ...</dd>
+        <dt>metrics</dt> <dd>webtrends; google analytics; statsd; pentaho; ...</dd>
+        <dt>search</dt> <dd>xapian; lucene; sphinx; elasticsearch; ...</dd>
+        <dt>clustering</dt> <dd>load balancers; server roles; ...</dd>
+    </dl>
+    <details><ul>
+        <li>Same goes for localization
+        <li>I could have made all kinds of permutations of skills here
+        <li>But the point is, we should find a way to invite contributors in all combinations
+    </ul></details>
+</section>
+
+<section class="chapter">
+    <h1 style="font-size: 0.98em"><strong>INSTALL.sh</strong>: let's waste a machine's time, instead.</h1>
+    <details><ul>
+        <li>The most perfectly written INSTALL.txt should be exact and repeatable
+        <li>In fact, it should look just like a script
+        <li>So, why not write it as a script and make a machine run it
+        <li>Of course, there are are better and more robust ways to do this, that waste less of <em>your</em> than plain old shell scripts.
     </ul></details>
 </section>
 
@@ -178,13 +269,17 @@
         <li>And since it's repeatable, that means you can (and should) throw away your dev env regularly
         <li>As long as you keep your Puppet manifests up to date, you'll rarely head-desk when your laptop dies
         <li>Since it's not you installing the dev env, you can be extravagant in what you include
+        <li>Include all your maintenance scripts for localization, testing, etc, so forth
         <li>That gets you closer to production, which gives you fewer surprises
+        <li>I started all of this by trying to work with Chef, but I ran into some issues iterating on my setup, whereas I just groked Puppet right away
     </ul></details>
 </section>
 
 <section class="chapter">
     <details><ul>
-        <li>These are excerpts from a Puppet manifest I'm building for the Mozilla Developer Network
+        <li>I don't have time to give a full tutorial of Puppet.
+        <li>But, here's a peek at a Puppet manifest I'm building for the Mozilla Developer Network
+        <li>Puppet's magic is that you declare the end state for a server and Puppet does what it takes to make it so
         <li>Each line of this is something you're <em>not</em> asking someone to do
         <li>That includes you and anyone you hope to come pitch in and help in the future
         <li>MDN kind of accreted around requirements, rather than get explicitly designed
@@ -323,7 +418,7 @@
 </section>
 
 <section class="chapter">
-    <h1 style="font-size: 0.95em">So someday, <strong>on my project</strong>, you might find <strong>this</strong>...</h1>
+    <h1 style="font-size: 0.95em">So <strong>someday</strong>, on <strong>my project</strong>, you'll find <strong>this</strong>...</h1>
 </section>
 
 <section class="chapter">
@@ -412,16 +507,17 @@ echo '192.168.10.50 dev-kuma.developer.mozilla.org' >> /etc/hosts
 </section>
 
 <section>
-    <h2>What about <strong>the data</strong>?</h2>
+    <h2>What about <strong>the content</strong>?</h2>
     <ul>
         <li><strong>Sites</strong> are more than <strong>code</strong></li>
         <li>Sanitized <strong>production data</strong></li>
         <li>Contrived <strong>test samples</strong></li>
+        <li>Keep your dumps <strong>PII-free</strong>
     </ul>
-    <div>
-    </div>
+    <a href="http://www.flickr.com/photos/skenmy/2258271622/"><img src="imgs/anon.jpg" style="position: absolute; width: 280px; top: 205px; left: 490px; box-shadow: 0 0 10px black;" /></a>
+    <h2 style="font-size: 0.75em">(Not affiliated with Anonymous; <strong>I just fail at image search</strong>)</h2>
     <details><ul>
-        <li>If your site is a wiki containing user-generated documentation, then the wiki itself is barely half the story
+        <li>If your site is a wiki for managing user-generated documentation, then the wiki software is barely half the story
         <li>But, although the content may be liberally licensed, personally identifiable information is generally not
         <li>Depends on your goals and species of contributors
         <li>Code-contributors may be fine with test samples, while content-contributors should use the productions site
@@ -429,17 +525,123 @@ echo '192.168.10.50 dev-kuma.developer.mozilla.org' >> /etc/hosts
     </ul></details>
 </section>
 
+<section class="chapter">
+<h2 style="font-size: 0.75em; margin: 0;"><a href="https://github.com/davedash/mysql-anonymous">github.com/davedash/mysql-anonymous</a></h2>
+    <details><ul>
+        <li>Dave Dash, another Mozilla Webdev, wrote this tool, mysql-anonymous
+        <li>Given a ruleset in YAML like this, it generates some SQL statements you can run against a database to strip or scramble PII
+    </ul></details>
+<pre style="float: left; font-size: 0.475em">
+<span class="lnr">  1 </span><span class="Comment"># Anonymization rules for MDN wiki_mdc_deki</span>
+<span class="lnr">  2 </span>
+<span class="lnr">  3 </span><span class="Identifier">databases</span><span class="Special">:</span>
+<span class="lnr">  4 </span>
+<span class="lnr">  5 </span>    <span class="Identifier">lmo_wiki_mdc_deki</span><span class="Special">:</span>
+<span class="lnr">  6 </span>
+<span class="lnr">  7 </span>        <span class="Identifier">truncate</span><span class="Special">:</span>
+<span class="lnr">  8 </span>            <span class="Operator">-</span> objectcache
+<span class="lnr">  9 </span>            <span class="Operator">-</span> querycache
+<span class="lnr"> 10 </span>            <span class="Operator">-</span> requestlog
+<span class="lnr"> 11 </span>            <span class="Operator">-</span> requeststats
+<span class="lnr"> 12 </span>
+<span class="lnr"> 13 </span>        <span class="Identifier">tables</span><span class="Special">:</span>
+<span class="lnr"> 14 </span>            <span class="Identifier">attachments_backup</span><span class="Special">:</span>
+<span class="lnr"> 15 </span>                <span class="Identifier">hash_value</span><span class="Special">:</span>
+<span class="lnr"> 16 </span>                    <span class="Operator">-</span> at_user_text
+<span class="lnr"> 17 </span>                    <span class="Operator">-</span> at_removed_by_text
+<span class="lnr"> 18 </span>            <span class="Identifier">logins</span><span class="Special">:</span>
+<span class="lnr"> 19 </span>                <span class="Identifier">random_ip</span><span class="Special">:</span>
+<span class="lnr"> 20 </span>                    <span class="Operator">-</span> login_ip_address
+<span class="lnr"> 21 </span>            <span class="Identifier">users</span><span class="Special">:</span>
+<span class="lnr"> 22 </span>                <span class="Identifier">hash_value</span><span class="Special">:</span>
+<span class="lnr"> 23 </span>                    <span class="Operator">-</span> user_name
+<span class="lnr"> 24 </span>                    <span class="Operator">-</span> user_real_name
+<span class="lnr"> 25 </span>                <span class="Identifier">hash_email</span><span class="Special">:</span>
+<span class="lnr"> 26 </span>                    <span class="Operator">-</span> user_email
+<span class="lnr"> 27 </span>                <span class="Identifier">nullify</span><span class="Special">:</span>
+<span class="lnr"> 28 </span>                    <span class="Operator">-</span> user_password
+<span class="lnr"> 29 </span>                    <span class="Operator">-</span> user_newpassword
+<span class="lnr"> 30 </span>                    <span class="Operator">-</span> user_token
+<span class="lnr"> 31 </span>                    <span class="Operator">-</span> user_external_name
+<span class="lnr"> 32 </span>
+</pre>
+<pre style="font-size: 0.475em; margin-left: 400px">
+<span class="lnr"> 33 </span>    <span class="Identifier">lmo_developer_mozilla_org_django</span><span class="Special">:</span>
+<span class="lnr"> 34 </span>
+<span class="lnr"> 35 </span>        <span class="Identifier">truncate</span><span class="Special">:</span>
+<span class="lnr"> 36 </span>            <span class="Operator">-</span> auth_message
+<span class="lnr"> 37 </span>            <span class="Operator">-</span> django_admin_log
+<span class="lnr"> 38 </span>            <span class="Operator">-</span> django_session
+<span class="lnr"> 39 </span>            <span class="Operator">-</span> threadedcomments_freethreadedcomment
+<span class="lnr"> 40 </span>            <span class="Operator">-</span> threadedcomments_testmodel
+<span class="lnr"> 41 </span>
+<span class="lnr"> 42 </span>        <span class="Identifier">tables</span><span class="Special">:</span>
+<span class="lnr"> 43 </span>            <span class="Identifier">actioncounters_actioncounterunique</span><span class="Special">:</span>
+<span class="lnr"> 44 </span>                <span class="Identifier">random_ip</span><span class="Special">:</span>
+<span class="lnr"> 45 </span>                    <span class="Operator">-</span> ip
+<span class="lnr"> 46 </span>                <span class="Identifier">nullify</span><span class="Special">:</span>
+<span class="lnr"> 47 </span>                    <span class="Operator">-</span> user_agent
+<span class="lnr"> 48 </span>                    <span class="Operator">-</span> session_key
+<span class="lnr"> 49 </span>            <span class="Identifier">auth_user</span><span class="Special">:</span>
+<span class="lnr"> 50 </span>                <span class="Identifier">hash_value</span><span class="Special">:</span>
+<span class="lnr"> 51 </span>                    <span class="Operator">-</span> username
+<span class="lnr"> 52 </span>                <span class="Identifier">random_email</span><span class="Special">:</span>
+<span class="lnr"> 53 </span>                    <span class="Operator">-</span> email
+<span class="lnr"> 54 </span>                <span class="Identifier">random_int</span><span class="Special">:</span>
+<span class="lnr"> 55 </span>                    <span class="Operator">-</span> first_name
+<span class="lnr"> 56 </span>                    <span class="Operator">-</span> last_name
+<span class="lnr"> 57 </span>                <span class="Identifier">nullify</span><span class="Special">:</span>
+<span class="lnr"> 58 </span>                    <span class="Operator">-</span> password
+<span class="lnr"> 59 </span>            <span class="Identifier">contentflagging_contentflag</span><span class="Special">:</span>
+<span class="lnr"> 60 </span>                <span class="Identifier">random_ip</span><span class="Special">:</span>
+<span class="lnr"> 61 </span>                    <span class="Operator">-</span> ip
+<span class="lnr"> 62 </span>                <span class="Identifier">nullify</span><span class="Special">:</span>
+<span class="lnr"> 63 </span>                    <span class="Operator">-</span> user_agent
+<span class="lnr"> 64 </span>                    <span class="Operator">-</span> session_key
+<span class="lnr"> 65 </span>            <span class="Identifier">user_profiles</span><span class="Special">:</span>
+<span class="lnr"> 66 </span>                <span class="Identifier">random_int</span><span class="Special">:</span>
+<span class="lnr"> 67 </span>                    <span class="Operator">-</span> location
+<span class="lnr"> 68 </span>                    <span class="Operator">-</span> homepage
+</pre>
+</section>
+
+<section class="chapter">
+    <h2 style="font-size: 0.75em; margin: 0;"><a href="https://landfill.addons.allizom.org/db/">landfill.addons.allizom.org/db</a></h2>
+    <details><ul>
+        <li>And addons.mozilla.org uses this to produce public data dumps to help contributors
+        <li>I'd like to see these incorporated into my Vagrant + Puppet bootstrap flow, to be automatically downloaded and imported during setup
+    </ul></details>
+    <img src="imgs/landfill.png" style="width: 100%;" />
+    <details><ul>
+    </ul></details>
+</section>
+
+<!--
 <section>
     <h2>Examples in the wild</h2>
     <ul>
        
     </ul>
 </section>
+-->
 
 <section>
     <h2>The <strong>FUTURE</strong></h2>
     <ul>
-       
+        <li>Self-executing Vagrant boxes
+        <li>Vagrant for the Cloud
+        <li>A <a href="https://wiki.mozilla.org/ReleaseEngineering/TryServer">Try server</a> for webdevs?
+        <li>
+    </ul>
+</section>
+
+<section>
+    <h2>Summary</h2>
+    <ul>
+        <li><strong>INSTALL.txt</strong> to <strong>INSTALL.sh</strong>
+        <li><strong>Sharable, disposable, inclusive</strong> dev VMs
+        <li>Offer <strong>anonymized content</strong> dumps
+        <li>Roll out <strong>the red carpet</strong> for contributors
     </ul>
 </section>
 
