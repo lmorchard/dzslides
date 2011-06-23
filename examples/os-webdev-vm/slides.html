@@ -36,9 +36,10 @@
         <li>random engagement projects
     </ul>
     <details><ul>
+        <li>I'm a wandering webdev at Mozilla
         <li>I've spent time working on all of these projects at Mozilla
-        <li>They're all open source
-        <li>But, having worked on them, I'm not sure they're all very inviting projects
+        <li>They're all open source; you can get a checkout for any of these from SVN or GitHub
+        <li>But, having worked on them, I'm not sure they're very inviting projects
     </ul></details>
     <table class="images" border="0" cellspacing="0">
         <tr>
@@ -73,17 +74,17 @@
 </section>
 
 <section class="chapter">
-    <h1 style="font-size: 1.25em">But, every time I wander, I find <strong>this</strong>...</h1>
+    <h1 style="font-size: 1.25em">Every time I wander, I find <strong>this</strong>...</h1>
 </section>
 
 <section class="chapter">
     <img src="imgs/kuma-install.png" style="width: 100%;" />
     <details><ul>
-        <li>And then, there's this.
         <li>These are the installation instructions for a project I work on
         <li>They're longer than some, shorter than others
-        <li>A wall of text between you and "hello world"
+        <li>This is a wall of text between you and getting started
         <li>Not everybody's favorite way to spend a Saturday afternoon
+        <li>And I'll talk about this in a second, but think about who'll be reading these directions and when they'll be reading it
     </ul></details>
 </section>
 
@@ -118,10 +119,10 @@
         <li>This is just a pile of buzzwords and names I threw at a slide
         <li>It's admittedly slanted toward the server-side, but there's so much going on with the client-side too
         <li>Some of these things are up there because we're a creative industry
+        <li>And we're far from done yet
         <li>But some, particularly for scaling and security, are up there because we learned we needed them the hard way
         <li>We're working to normalize this on Mozilla Webdev projects by picking a framework and establishing best practices
         <li>But, even using an opinionated webdev stack with strong defaults, you're narrowing down choices, not areas of concern
-        <li>And we're far from done yet
     </ul></details>
 </section>
 
@@ -154,10 +155,9 @@
     <details><ul>
         <li>So, this is the problem
         <li>Since I'm being paid, I put up with it
-        <li>But for unpaid contributors - you're wasting patience, goodwill, and motivation
-        <li>And that's only if your installation docs are fully up to date
-        <li>It's really easy to frog boil your way from addition to addition to forget how to get your project running from scratch
-        <li>Experts in just a few of these buzzwords that you don't know would be wonderful
+        <li>But for unpaid contributors - we're wasting patience, goodwill, and motivation
+        <li>And that's only if the installation docs are fully up to date
+        <li>It's really easy to frog boil our way from addition to addition to forget how to get your project running from scratch
     </ul></details>
 </section>
 
@@ -186,8 +186,9 @@
         <dt>clustering</dt> <dd>load balancers; server roles; ...</dd>
     </dl>
     <details><ul>
-        <li>Let's say your INSTALL.txt mainly covers these areas
+        <li>Let's say our INSTALL.txt mainly covers these areas
         <li>So, it would really help if a new contributor knew a bit about these things, just in case she or he runs into problems
+        <li>But this kind of looks like we're hoping to attract sysadmins as contributors
     </ul></details>
 </section>
 
@@ -245,7 +246,8 @@
 <section class="chapter">
     <h1 style="font-size: 0.98em"><strong>INSTALL.sh</strong>: let's waste a machine's time, instead.</h1>
     <details><ul>
-        <li>The most perfectly written INSTALL.txt should be exact and repeatable
+        <li>We shouldn't ask our contributors to all be sysadmins on top of other things they're good at.
+        <li>And besides, the most perfectly written INSTALL.txt should be exact and repeatable
         <li>In fact, it should look just like a script
         <li>So, why not write it as a script and make a machine run it
         <li>Of course, there are are better and more robust ways to do this, that waste less of <em>your</em> than plain old shell scripts.
@@ -415,32 +417,6 @@
 <span class="lnr">50 </span>
 <span class="lnr">51 </span><span class="Statement">end</span>
 </pre>
-</section>
-
-<section class="chapter">
-    <h1 style="font-size: 0.95em">So <strong>someday</strong>, on <strong>my project</strong>, you'll find <strong>this</strong>...</h1>
-</section>
-
-<section class="chapter">
-<pre style="display: block; width: 500px; margin: 120px auto; white-space: pre-line">
-<span class="Comment"># Install VirtualBox 4 from http://www.virtualbox.org/</span>
-
-<span class="Comment"># Install vagrant, see vagrantup.com</span>
-gem install vagrant
-
-<span class="Comment"># Clone the repo from GitHub</span>
-git clone git://github.com/mozilla/kuma.git
-
-<span class="Comment"># Fire up the VM and install everything,
-# go take a bike ride (approx. 15 min)</span>
-vagrant up
-
-<span class="Comment"># Add dev-kuma.developer.mozilla.org to /etc/hosts</span>
-echo '192.168.10.50 dev-kuma.developer.mozilla.org' >> /etc/hosts
-</pre>
-    <details><ul>
-        <li>
-    </ul></details>
 </section>
 
 <section>
@@ -616,14 +592,52 @@ echo '192.168.10.50 dev-kuma.developer.mozilla.org' >> /etc/hosts
     </ul></details>
 </section>
 
-<!--
-<section>
-    <h2>Examples in the wild</h2>
-    <ul>
-       
-    </ul>
+<section class="chapter">
+    <h1 style="font-size: 0.95em">So <strong>someday</strong>, on <strong>my project</strong>, you'll find <strong>this</strong>...</h1>
 </section>
--->
+
+<section class="chapter">
+<pre style="display: block; width: 500px; margin: 120px auto; white-space: pre-line">
+<span class="Comment"># Install VirtualBox 4 from http://www.virtualbox.org/</span>
+
+<span class="Comment"># Install vagrant, see vagrantup.com</span>
+gem install vagrant
+
+<span class="Comment"># Clone the repo from GitHub</span>
+git clone git://github.com/mozilla/kuma.git
+cd kuma
+
+<span class="Comment"># Fire up the VM and install everything,
+# go take a bike ride (approx. 15-30 min)</span>
+vagrant up
+
+<span class="Comment"># Add dev-kuma.developer.mozilla.org to /etc/hosts</span>
+echo '192.168.10.50 dev-kuma.developer.mozilla.org' >> /etc/hosts
+</pre>
+    <details><ul>
+        <li>
+    </ul></details>
+</section>
+
+<section>
+    <h2>Prior art &amp; Examples</h2>
+    <style class="text/css">
+        dl.prior_art {
+            font-size: 0.75em;
+        }
+        dl.prior_art dt {
+            margin-top: 0.5em;
+        }
+        dl.prior_art dd {
+            margin-top: 0.5em;
+            margin-left: 295px;
+        }
+    </style>
+    <dl class="prior_art">
+        <dt><a href="http://landfill.bugzilla.org/">landfill.bugzilla.org</a></dt><dd>"Landfill is the home of test installations for Bugzilla. These are demo installations that you can use to 'try out' Bugzilla."</dd>
+        <dt><a href="http://hack.dreamwidth.net/">hack.dreamwidth.net</a></dt><dd>"The Dreamwidth code is, at present, not the easiest code in the world to install."</dd>
+    </dl>
+</section>
 
 <section>
     <h2>The <strong>FUTURE</strong></h2>
@@ -636,24 +650,21 @@ echo '192.168.10.50 dev-kuma.developer.mozilla.org' >> /etc/hosts
 </section>
 
 <section>
-    <h2>Summary</h2>
+    <h2>To sum up...</h2>
     <ul>
+        <li>Waste less <strong>human time</strong>
         <li><strong>INSTALL.txt</strong> to <strong>INSTALL.sh</strong>
         <li><strong>Sharable, disposable, inclusive</strong> dev VMs
         <li>Offer <strong>anonymized content</strong> dumps
-        <li>Roll out <strong>the red carpet</strong> for contributors
+        <li>Invite <strong>contributors</strong> not just <strong>sysadmins</strong>
     </ul>
 </section>
 
 <!--
 
 * blow away your VM once a week or month
-* your dev machine setup is no longer a precious asset
 
 * nfs mounts
-
-* mccloud for vagrant in the cloud - https://github.com/jedi4ever/mccloud
-* cover "wanton", which wraps vagrant in a jar for self-executing boxes
 
 * some examples
     * palm webos
